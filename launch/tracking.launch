@@ -1,0 +1,10 @@
+<launch>
+  <!-- a basic listener node -->
+  <node name="listener" pkg="camerapanning" type="listener.py" output="screen"/>
+  <node name="servo" pkg="camerapanning" type="servoMovement.py"/>
+  <node name="usb_cam" pkg="usb_cam" type="usb_cam_node">
+      <param name="video_device" value="/dev/video1" />
+      <param name="pixel_format" value="yuyv" />
+      <param name="camera_name" value="tracker_camera" />
+  </node>
+</launch>
